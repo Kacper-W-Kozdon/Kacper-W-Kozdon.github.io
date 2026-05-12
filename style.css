@@ -8,15 +8,15 @@
 
 main {
     height:100vh;
-    overflow-y:scroll;
-    scroll-snap-type:y mandatory;
+    /* overflow-y:scroll; */
+    /* scroll-snap-type:y mandatory; */
     /* touch-action: auto; */
 }
 
 section {
     /* touch-action: auto; */
     height: 100vh;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
     display: flex;
     justify-content: center;
 }
