@@ -623,8 +623,7 @@ color:var(--ink)
     padding:12px 16px 32px;
     background:var(--bg);
     border-top:1px solid var(--border);
-    z-index:10;
-    margin-top:auto
+    z-index:10
 }
 
 /* ── Results screen ── */
@@ -1354,8 +1353,7 @@ color:var(--ink)
     padding:12px 16px 34px;
     background:var(--bg);
     border-top:1px solid var(--border);
-    z-index:100;
-    margin-top:auto
+    z-index:100
 }
 
 
@@ -1861,7 +1859,7 @@ color:var(--ink)
 }
 
 .profile-tab-panel{
-    padding-bottom:40px
+    padding-bottom:92px
 }
 
 .profile-section{
@@ -2220,11 +2218,10 @@ bottom:0;
 padding:12px 16px 34px;
 background:var(--bg);
 border-top:1px solid var(--border);
-z-index:10;
-margin-top:auto
+z-index:10
 }
 .docs-screen-body{
-padding:16px 16px 8px
+padding:16px 16px 92px
 }
 
 /* ── Profile sticky footer ── */
@@ -2234,8 +2231,7 @@ bottom:0;
 padding:12px 16px 34px;
 background:var(--bg);
 border-top:1px solid var(--border);
-z-index:10;
-margin-top:auto
+z-index:10
 }
 
 /* ── Bio chip padding parity ── */
