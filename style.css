@@ -18,7 +18,7 @@ section {
     /* scroll-snap-align: start; */
     /* display: flex; */
     /* justify-content: center; */
-    
+
 }
 
 html{
@@ -635,7 +635,7 @@ color:var(--ink)
 
 .filters-footer{
     position:sticky;
-    bottom:0;
+    bottom:56px;
     padding:12px 16px 32px;
     background:var(--bg);
     border-top:1px solid var(--border);
