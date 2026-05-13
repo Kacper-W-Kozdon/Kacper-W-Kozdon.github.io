@@ -230,13 +230,13 @@ body{
 }
 
 footer{
-    position:relative;
+    position:absolute;
     bottom:0;
     padding:28px 16px 44px;
     border-top:1px solid var(--border);
     display:flex;
     flex-direction:column;
-    align-items:flex-end;
+    align-items:flex;
     gap:20px;
     margin-top:auto;
 }
