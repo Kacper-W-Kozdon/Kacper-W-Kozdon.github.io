@@ -237,7 +237,7 @@ body{
     flex-direction:column;
     align-items:center;
     gap:20px;
-    margin-top:auto
+    margin-top:auto;
 }
 
 .footer a{
