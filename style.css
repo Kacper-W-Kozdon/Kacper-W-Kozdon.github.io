@@ -936,7 +936,7 @@ color:var(--ink)
 }
 
 .match-expanded.open{
-    display:grid
+    display:block
 }
 
 .match-exp-title{
