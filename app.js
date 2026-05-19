@@ -282,6 +282,12 @@ function showJobDetail(id){
   const job=JOBS.find(j=>j.id===id);
   if(!job) return;
 
+  var matches=fillMatches(job, "match");
+  var mismatches=fillMatches(job, "mismatch");
+
+  console.log(matches);
+  console.log(mismatches);
+
   document.getElementById('dt-date').textContent='Data dodania: '+job.date;
   document.getElementById('dt-logo').innerHTML=`<div class="detail-logo" style="${logoStyle(job)}">${LOGOS[id]||''}</div>`;
   document.getElementById('dt-company').textContent=job.company;
@@ -296,13 +302,13 @@ function showJobDetail(id){
   document.getElementById('dt-paychips').innerHTML=job.payChips.map(c=>`<span class="salary-chip">${c}</span>`).join('');
   document.getElementById('dt-paynote').textContent=job.payNote;
 
-  document.getElementById('dt-match-text').textContent=`${job.matchCount} dopasowanych cech${<><br/><br/></>}${job.mismatchCount} różnic(e) - sprawdź przed aplikacją`;
+  document.getElementById('dt-match-text').textContent=`${job.matchCount} dopasowanych cech<br/><br/>${job.mismatchCount} różnic(e) - sprawdź przed aplikacją`;
   document.getElementById('dt-match-title-plus').textContent=`To was łączy`;
-  document.getElementById('dt-match-chips-plus').innerHTML=fillMatches(job, "match").map((e)=>`<span class="chip" style="border: 1px; background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
+  document.getElementById('dt-match-chips-plus').innerHTML=matches.map((e)=>`<span class="chip" style="border: 1px; background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
     <span class="cs-icon material-symbols-outlined" style="color: #28A35A;">thumb_up</span> ${e}
   </span>`).join('');
   document.getElementById('dt-match-title-minus').textContent=`Warto mieć na uwadze`;
-  document.getElementById('dt-match-chips-minus').innerHTML=fillMatches(job, "mismatch").map((e)=>`<span class="chip" style="border: 1px; background: #F0BABA; color: #C83232; borderColor: #C83232">
+  document.getElementById('dt-match-chips-minus').innerHTML=mismatches.map((e)=>`<span class="chip" style="border: 1px; background: #F0BABA; color: #C83232; borderColor: #C83232">
     <span class="cs-icon material-symbols-outlined" style="color: #C83232;">thumb_down</span> ${e}
   </span>`).join('');
 
@@ -418,8 +424,8 @@ function getRandomFromBucket(bucket) {
 
 function fillMatches(job, ismatch){
   const d=JSON.parse(document.getElementById('app-data').textContent);
-  BOOST_DATA=d.profile.boostData.space.concat(d.profile.boostData.culture, d.profile.boostData.sensory);
-  DEBOOST_DATA=job.chipsNegative;
+  boost_data=d.profile.boostData.space.concat(d.profile.boostData.culture, d.profile.boostData.sensory);
+  deboost_data=job.chipsNegative;
 
   console.log(job, ismatch)
 
@@ -430,7 +436,7 @@ function fillMatches(job, ismatch){
   switch (ismatch) {
 
     case "match":
-      var positive_count=count<BOOST_DATA.length? count: BOOST_DATA.length;
+      var positive_count=count<boost_data.length? count: boost_data.length;
 
       for (var i=0;i<positive_count;i++) {
         bucket.push(getRandomFromBucket(bucket))
@@ -438,7 +444,7 @@ function fillMatches(job, ismatch){
       break;
     
     case "mismatch":
-      var negative_count=count<DEBOOST_DATA.length? count: DEBOOST_DATA.length;
+      var negative_count=count<deboost_data.length? count: deboost_data.length;
 
       for (var i=0;i<negative_count;i++) {
         bucket.push(getRandomFromBucket(bucket))
@@ -448,7 +454,7 @@ function fillMatches(job, ismatch){
   }
   console.log(bucket)
   
-  return bucket
+  return bucket;
 
 }
 
