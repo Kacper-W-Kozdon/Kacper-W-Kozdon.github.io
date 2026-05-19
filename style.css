@@ -930,8 +930,8 @@ color:var(--ink)
     display:none;
     margin:0 16px 14px;
     background:var(--surface);
-    border-radius:var(--rc);
-    padding:14px 16px;
+    border-radius:0 0 var(--rc) var(--rc);
+    padding:0px 16px 14px;
     box-shadow:var(--shadow)
 }
 
