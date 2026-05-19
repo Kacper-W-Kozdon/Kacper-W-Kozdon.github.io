@@ -302,15 +302,14 @@ function showJobDetail(id){
   document.getElementById('dt-paychips').innerHTML=job.payChips.map(c=>`<span class="salary-chip">${c}</span>`).join('');
   document.getElementById('dt-paynote').textContent=job.payNote;
 
-  document.getElementById('dt-match-text').textContent=`${job.matchCount} dopasowanych cech
-  ${job.mismatchCount} różnic(e) - sprawdź przed aplikacją`;
+  document.getElementById('dt-match-text').innerHTML=<span>`${job.matchCount} dopasowanych cech`</span><span>`${job.mismatchCount} różnic(e) - sprawdź przed aplikacją`</span>;
   document.getElementById('dt-match-title-plus').textContent=`To was łączy`;
   document.getElementById('dt-match-chips-plus').innerHTML=matches.map((e)=>`<span class="chip" style="border: 1px; background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
-    <span class="cs-icon material-symbols-outlined" style="color: #28A35A;">thumb_up</span> ${e}
+    <div class="cs-icon material-symbols-outlined" style="color: #28A35A;">thumb_up</div> ${e}
   </span>`).join('');
   document.getElementById('dt-match-title-minus').textContent=`Warto mieć na uwadze`;
   document.getElementById('dt-match-chips-minus').innerHTML=mismatches.map((e)=>`<span class="chip" style="border: 1px; background: #F0BABA; color: #C83232; borderColor: #C83232">
-    <span class="cs-icon material-symbols-outlined" style="color: #C83232;">thumb_down</span> ${e}
+    <div class="cs-icon material-symbols-outlined" style="color: #C83232;">thumb_down</div> ${e}
   </span>`).join('');
 
   document.getElementById('dt-about').textContent=job.about;
