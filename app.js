@@ -312,7 +312,7 @@ function showJobDetail(id){
 
   document.getElementById('dt-chips').innerHTML=job.chips.map(c=>`<span class="chip">${c}</span>`).join('');
 
-  document.getElementById('dt-benefits').innerHTML=job.benefits.map(([e,t])=>`<div class="benefit-item">${e} ${t}</div>`).join('');
+  document.getElementById('dt-benefits').innerHTML=job.benefits.map(([e,t])=>`<span class="chip">${t}</span>`).join('');
 
   document.getElementById('dt-extra').innerHTML=makeList(job.extra);
 
