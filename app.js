@@ -296,8 +296,15 @@ function showJobDetail(id){
   document.getElementById('dt-paychips').innerHTML=job.payChips.map(c=>`<span class="salary-chip">${c}</span>`).join('');
   document.getElementById('dt-paynote').textContent=job.payNote;
 
-  document.getElementById('dt-match-text').textContent=`${job.matchCount} dopasowanych cech`;
-  document.getElementById('dt-match-title').textContent=`${job.matchCount} cech pasuje do Twojego profilu`;
+  document.getElementById('dt-match-text').textContent=`${job.matchCount} dopasowanych cech\n${job.mismatchCount} różnic(e) - sprawdź przed aplikacją`;
+  document.getElementById('dt-match-title-plus').textContent=`To was łączy`;
+  document.getElementById('dt-match-chips-plus').innerHTML=fillMatches(job, "match").map((e)=>`<span class="chip" style="background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
+    <span class="cs-icon material-symbols-outlined" style="color: #28A35A;">thumb_up</span> ${e}
+  </span>`).join('');
+  document.getElementById('dt-match-title-minus').textContent=`Warto mieć na uwadze`;
+  document.getElementById('dt-match-chips-minus').innerHTML=fillMatches(job, "mismatch").map((e)=>`<span class="chip" style="background: #F0BABA; color: #C83232; borderColor: #C83232">
+    <span class="cs-icon material-symbols-outlined" style="color: #C83232;">thumb_down</span> ${e}
+  </span>`).join('');
 
   document.getElementById('dt-about').textContent=job.about;
 
@@ -402,6 +409,44 @@ function toggleFav(){
     icon.style.color='#1c1b2e';
     btn.style.borderColor='';
   }
+}
+
+function getRandomFromBucket(bucket) {
+   var randomIndex = Math.floor(Math.random()*bucket.length);
+   return bucket.splice(randomIndex, 1)[0];
+}
+
+function fillMatches(job, ismatch){
+  const d=JSON.parse(document.getElementById('app-data').textContent);
+  BOOST_DATA=d.profile.boostData.space.concat(d.profile.boostData.culture, d.profile.boostData.sensory);
+  DEBOOST_DATA=job.chipsNegative;
+
+  var count=ismatch==="match"? job.matchCount: ismatch==="mismatch"? job.mismatchCount: 0
+
+  bucket=[];
+
+  switch (ismatch) {
+
+    case "match":
+      var positive_count=count<BOOST_DATA.length? count: BOOST_DATA.length;
+
+      for (var i=0;i<positive_count;i++) {
+        bucket.push(getRandomFromBucket(bucket))
+      };
+      break;
+    
+    case "mismatch":
+      var negative_count=count<DEBOOST_DATA.length? count: DEBOOST_DATA.length;
+
+      for (var i=0;i<negative_count;i++) {
+        bucket.push(getRandomFromBucket(bucket))
+      };
+      break;
+
+  }
+  
+  return bucket
+
 }
 
 function toggleMatch(){
