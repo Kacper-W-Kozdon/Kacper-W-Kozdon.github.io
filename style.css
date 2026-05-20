@@ -219,6 +219,7 @@ body{
     align-items:center;
     justify-content:center;
     gap:8px;
+    padding:13px 16px;
     background:var(--surface);
     color:var(--ink);
     border:1.5px solid var(--border);
@@ -249,10 +250,12 @@ body{
     cursor:pointer;
     font-family:inherit;
     transition:background .15s;
+    width:100%;
 }
 
 .btn-outlined:active{
     background:#f5f0eb;
+    width:100%;
 }
 
 .chip{
