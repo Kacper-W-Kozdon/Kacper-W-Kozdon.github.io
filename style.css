@@ -251,6 +251,7 @@ body{
     font-family:inherit;
     transition:background .15s;
     width:100%;
+    
 }
 
 .btn-outlined:active{
