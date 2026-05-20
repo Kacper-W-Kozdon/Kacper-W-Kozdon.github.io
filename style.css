@@ -253,8 +253,6 @@ body{
     font-family:inherit;
     transition:background .15s;
     field-sizing:inherit;
-    box-sizing:border-box;
-
 }
 
 .btn-outlined:active{
