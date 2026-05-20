@@ -229,10 +229,12 @@ body{
     cursor:pointer;
     font-family:inherit;
     transition:background .15s;
+    width: 100%;
 }
 
 .btn-outlined:active{
     background:#f5f0eb;
+    width:100%;
 }
 
 .chip{
