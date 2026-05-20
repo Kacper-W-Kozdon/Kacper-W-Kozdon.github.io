@@ -941,6 +941,7 @@ color:var(--ink)
 }
 .match-pill{
     display:flex;
+    flex-wrap:wrap;
     align-items:center;
     gap:6px;
     padding:13px 14px;
