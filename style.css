@@ -207,6 +207,11 @@ body{
     font-size:13px;
     font-weight:600;
     height:auto;
+    transition:background .15s;
+}
+
+.pill-outlined:active{
+    background:#f5f0eb;
 }
 
 .btn-outlined{
@@ -223,7 +228,7 @@ body{
     font-weight:600;
     cursor:pointer;
     font-family:inherit;
-    transition:background .15s
+    transition:background .15s;
 }
 
 .btn-outlined:active{
