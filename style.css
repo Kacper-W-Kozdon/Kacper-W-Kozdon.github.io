@@ -229,12 +229,12 @@ body{
     cursor:pointer;
     font-family:inherit;
     transition:background .15s;
-    width:100%;
+    width:stretch;
 }
 
 .btn-outlined-wrapper:active{
     background:#f5f0eb;
-    width:100%;
+    width:stretch;
 }
 
 .btn-outlined{
@@ -252,13 +252,13 @@ body{
     cursor:pointer;
     font-family:inherit;
     transition:background .15s;
-    width:100%;
+    width:stretch;
 
 }
 
 .btn-outlined:active{
     background:#f5f0eb;
-    width:100%;
+    width:stretch;
 }
 
 .chip{
