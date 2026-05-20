@@ -930,12 +930,11 @@ color:var(--ink)
 
 .match-expanded{
     display:none;
-    margin:0 16px 14px;
     background:var(--surface);
     border-radius:0 0 var(--rc) var(--rc);
     padding:0px 16px 14px;
     box-shadow:var(--shadow);
-    width: 100%;
+    width: inherit;
     border-top:none;
 }
 
