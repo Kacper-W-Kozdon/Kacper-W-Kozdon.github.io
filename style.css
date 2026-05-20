@@ -227,7 +227,9 @@ body{
 }
 
 .btn-outlined:active{
-    background:#f5f0eb
+    background:#f5f0eb;
+    border-radius:var(--rb) var(--rb) 0 0;
+    border-bottom: none
 }
 
 .chip{
@@ -932,7 +934,9 @@ color:var(--ink)
     background:var(--surface);
     border-radius:0 0 var(--rc) var(--rc);
     padding:0px 16px 14px;
-    box-shadow:var(--shadow)
+    box-shadow:var(--shadow);
+    width: 100%;
+    border-top:none;
 }
 
 .match-expanded.open{
