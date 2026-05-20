@@ -938,9 +938,12 @@ color:var(--ink)
     transition:background .15s
 }
 
+.match-expanded:active{
+    background:#f5f0eb;
+}
+
 .match-expanded.open{
     display:block;
-    background:#f5f0eb;
 
 }
 
