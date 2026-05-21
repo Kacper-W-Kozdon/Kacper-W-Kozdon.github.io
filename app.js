@@ -309,7 +309,7 @@ function showJobDetail(id){
     <span class="boost-chip-icon">${BOOST_SVG}</span><div class="match-pill-text" style="font-weight: normal;">${e}</div>
   </div>`).join('');
   document.getElementById('dt-match-title-minus').textContent=`Warto mieć na uwadze`;
-  document.getElementById('dt-match-chips-minus').innerHTML=mismatches.map((e)=>`<div class="boost-chip green">
+  document.getElementById('dt-match-chips-minus').innerHTML=mismatches.map((e)=>`<div class="boost-chip red">
     <span class="boost-chip-icon">${BLOCK_SVG}</span><div class="match-pill-text" style="color: #C83232; font-weight: normal;">${e}</div>
   </div>`).join('');
 
