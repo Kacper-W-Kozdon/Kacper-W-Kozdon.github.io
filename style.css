@@ -951,6 +951,7 @@ color:var(--ink)
     font-family:inherit;
     max-width:100%;
 }
+
 .match-pill-text{
     text-wrap:wrap;
     font-size:13px;

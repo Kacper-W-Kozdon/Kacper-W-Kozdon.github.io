@@ -306,11 +306,11 @@ function showJobDetail(id){
   document.getElementById('dt-match-text-minus').textContent=`${job.mismatchCount} różnic - sprawdź przed aplikacją`;
   document.getElementById('dt-match-title-plus').textContent=`To was łączy`;
   document.getElementById('dt-match-chips-plus').innerHTML=matches.map((e)=>`<div class="boost-chip green">
-    <span class="boost-chip-icon">${BOOST_SVG}</span><div class="match-pill-text">${e}</div>
+    <span class="boost-chip-icon">${BOOST_SVG}</span><div class="match-pill-text" style="font-weight: normal;">${e}</div>
   </div>`).join('');
   document.getElementById('dt-match-title-minus').textContent=`Warto mieć na uwadze`;
   document.getElementById('dt-match-chips-minus').innerHTML=mismatches.map((e)=>`<div class="boost-chip green">
-    <span class="boost-chip-icon">${BLOCK_SVG}</span><div class="match-pill-text" style="color: #C83232">${e}</div>
+    <span class="boost-chip-icon">${BLOCK_SVG}</span><div class="match-pill-text" style="color: #C83232; font-weight: normal;">${e}</div>
   </div>`).join('');
 
   document.getElementById('dt-about').textContent=job.about;
